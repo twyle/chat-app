@@ -1,0 +1,4 @@
+langchain==0.1.1
+langchain-openai==0.0.2.post1
+chainlit==1.0.101
+oryks-youtube==0.11.2
