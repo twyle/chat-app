@@ -1,4 +1,7 @@
 # chat-app
+<p align=center>
+  <img src="chat-app.gif" />
+</p>
 ## Overview
 This is a simple chat-app that answers users questions using four data sources:
 - A backend database; this is an sql database that contains a single table that describes youtube videos i.e ``title, description, number of views, likes and comments``. An example query is ``Find me all the videos that have more than 1000 likes.``
