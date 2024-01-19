@@ -1,18 +1,17 @@
 from dotenv import load_dotenv
 load_dotenv()
-import chainlit as cl
 from chat.agent import get_agent_executor
+import sys
 
 
-@cl.on_chat_start
-async def start():
-    cl.user_session.set('agent', get_agent_executor())
-
-@cl.on_message
-async def main(message: cl.Message):
-    msg = cl.Message(content="")
-    await msg.send()
-    query: str = message.content
-    agent_executor = cl.user_session.get('agent')
-    msg.content = agent_executor.invoke({"input": query})['output']
-    await msg.update()
+print('############Chat-app############')
+while True:
+    prompt: str = 'Enter the query or q to quit: '
+    query: str = input(prompt)
+    if not query:
+        print('You have to enter a query')
+    elif query.lower().strip() in ['q', 'quit']:
+        sys.exit(0)
+    else:
+        res: str = get_agent_executor().invoke({"input": query})['output']
+        print(res)

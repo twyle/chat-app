@@ -13,7 +13,8 @@ class ChatGPTTool(BaseTool):
     description = """
     useful when you need to to search for information older than two years by querying chatgpt. 
     Use this tool more if the user request is a generic question and is requesting information from 
-    earlier than two years ago.
+    earlier than two years ago. Use this more if the request 
+    requires information from more than two years ago.
     """
 
     def _run(
